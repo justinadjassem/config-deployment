@@ -32,4 +32,4 @@ jobs:
 workflows:
   exercise-infrastructure-Workflow:
     jobs:
-      - create_infrastructure
+      - exercise_infrastructure
