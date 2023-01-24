@@ -70,19 +70,19 @@ jobs:
               return 1
             fi
 # Exercise: Smoke Testing
-smoke_test2:
- docker:
-   - image: alpine:latest
- steps:
-   - run:
-       name: Test job
-       # Fail the job intentionally to simulate an error.
-       command:  return 1
-   - destroy_environment  
+  smoke_test2:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+          name: Test job
+          # Fail the job intentionally to simulate an error.
+          command:  return 1
+      - destroy_environment  
 workflows:
   exercise-infrastructure-Workflow:
     jobs:
-      - exercise_infrastructure
+      - create_infrastructure
       - smoke_test
       - configure_infrastructure
       - smoke_test2
